@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.maximapps.feature.a">
+
+    <application android:theme="@style/Theme.DaggerMultiModule">
+        <activity android:name=".ui.FeatureAActivity" />
+    </application>
+</manifest>
