@@ -2,11 +2,8 @@ package com.maximapps.feature.core.data
 
 import com.maximapps.core.Messenger
 import com.maximapps.feature.core.di.FeatureCoreScope
+import com.maximapps.feature.core.domain.MessageRepository
 import javax.inject.Inject
-
-internal interface MessageRepository {
-    fun getLastUnreadMessage(): String
-}
 
 @FeatureCoreScope
 internal class MessageRepositoryImpl @Inject constructor(

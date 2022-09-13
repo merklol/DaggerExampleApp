@@ -1,6 +1,5 @@
 package com.maximapps.feature.core.domain
 
-import com.maximapps.feature.core.data.MessageRepository
 import javax.inject.Inject
 
 interface GetLastUnreadMessageUseCase {

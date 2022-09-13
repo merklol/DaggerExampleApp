@@ -1,9 +1,9 @@
 package com.maximapps.feature.core.di.modules
 
 import com.maximapps.feature.core.data.MessageRepositoryImpl
-import com.maximapps.feature.core.data.MessageRepository
 import com.maximapps.feature.core.domain.GetLastUnreadMessageUseCase
 import com.maximapps.feature.core.domain.GetLastUnreadMessageUseCaseImpl
+import com.maximapps.feature.core.domain.MessageRepository
 import dagger.Binds
 import dagger.Module
 
