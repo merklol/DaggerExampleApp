@@ -4,5 +4,5 @@ import javax.inject.Scope
 
 @Scope
 @MustBeDocumented
-@kotlin.annotation.Retention(AnnotationRetention.RUNTIME)
+@Retention(AnnotationRetention.RUNTIME)
 internal annotation class FeatureAScope
