@@ -4,14 +4,17 @@ import org.gradle.kotlin.dsl.getByType
 
 class AppConfiguration(
     val appId: String,
+    val namespace: String,
     val testInstrumentationRunner: String
 ) {
     class Builder {
         var appId: String = ""
+        var namespace: String = ""
         var testInstrumentationRunner: String = ""
 
         fun build() = AppConfiguration(
             appId,
+            namespace,
             testInstrumentationRunner
         )
     }
@@ -19,8 +22,9 @@ class AppConfiguration(
 
 fun Project.configureApp(action: AppConfiguration.Builder.() -> Unit) {
     val configuration = AppConfiguration.Builder().apply(action).build()
-    val defaultConfig = extensions.getByType<BaseAppModuleExtension>().defaultConfig
+    val extension = extensions.getByType<BaseAppModuleExtension>()
 
-    defaultConfig.applicationId = configuration.appId
-    defaultConfig.testInstrumentationRunner = configuration.testInstrumentationRunner
+    extension.namespace = configuration.namespace
+    extension.defaultConfig.applicationId = configuration.appId
+    extension.defaultConfig.testInstrumentationRunner = configuration.testInstrumentationRunner
 }

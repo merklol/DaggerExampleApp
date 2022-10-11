@@ -4,6 +4,7 @@ plugins {
 }
 
 configureLibrary {
+    namespace = "com.maximapps.feature.a"
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 }
 
