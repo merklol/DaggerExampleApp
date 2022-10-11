@@ -4,6 +4,7 @@ plugins {
 }
 configureApp {
     appId = "com.maximapps.dagger.multi.module"
+    namespace = "com.maximapps.dagger.multi.module"
     testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
 }
 

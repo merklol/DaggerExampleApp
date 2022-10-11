@@ -2,17 +2,19 @@ import com.android.build.gradle.LibraryExtension
 import org.gradle.api.Project
 import org.gradle.kotlin.dsl.getByType
 
-class LibraryConfiguration(val testInstrumentationRunner: String) {
+class LibraryConfiguration(val namespace: String, val testInstrumentationRunner: String) {
     class Builder {
+        var namespace: String = ""
         var testInstrumentationRunner: String = ""
 
-        fun build() = LibraryConfiguration(testInstrumentationRunner)
+        fun build() = LibraryConfiguration(namespace, testInstrumentationRunner)
     }
 }
 
 fun Project.configureLibrary(action: LibraryConfiguration.Builder.() -> Unit) {
     val configuration = LibraryConfiguration.Builder().apply(action).build()
-    val defaultConfig = extensions.getByType<LibraryExtension>().defaultConfig
+    val extension = extensions.getByType<LibraryExtension>()
 
-    defaultConfig.testInstrumentationRunner = configuration.testInstrumentationRunner
+    extension.namespace = configuration.namespace
+    extension.defaultConfig.testInstrumentationRunner = configuration.testInstrumentationRunner
 }
